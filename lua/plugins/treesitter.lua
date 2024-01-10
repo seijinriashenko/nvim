@@ -16,7 +16,6 @@ nvim_treesiter_configs.setup({
     'lua',
     'markdown',
     'markdown_inline',
-    'nix',
     'python',
     'rust',
     'scss',

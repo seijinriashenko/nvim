@@ -55,7 +55,8 @@ custom_gruvbox = {
 lualine.setup {
   options = {
     icons_enabled = false,
-    theme = custom_gruvbox,
+    -- theme = custom_gruvbox,
+    -- theme = "ayu_mirage",
     component_separators = '|',
     section_separators = '',
   },

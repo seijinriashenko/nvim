@@ -15,6 +15,10 @@ require('lazy').setup({
   { -- lsp configuration & plugins
     'neovim/nvim-lspconfig',
     dependencies = {
+      -- Automatically install LSPs to stdpath for neovim
+      { 'williamboman/mason.nvim', config = true },
+      'williamboman/mason-lspconfig.nvim',
+
       { 'j-hui/fidget.nvim', tag = 'legacy' },
       -- 'opts = {}' is equivalent to 'require('neodev').setup({})'
       { 'folke/neodev.nvim', opts = {} },
@@ -123,7 +127,26 @@ require('lazy').setup({
     'ellisonleao/gruvbox.nvim',
     priority = 1000,
     config = function()
-      require("plugins.gruvbox")
+      require("plugins.themes.gruvbox")
     end
   },
+
+  -- {
+  --   'projekt0n/github-nvim-theme',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("plugins.themes.github")
+  --   end
+  -- },
+
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   priority = 1000,
+  --   lazy = false,
+  --   opts = {},
+  --   config = function ()
+  --     require("plugins.tokyonight")
+  --   end
+  -- },
 })
