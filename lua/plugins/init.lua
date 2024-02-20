@@ -48,7 +48,7 @@ require('lazy').setup({
         'nvim-treesitter/nvim-treesitter',
         dependencies = {
             'nvim-treesitter/nvim-treesitter-textobjects',
-            'nvim-treesitter/nvim-treesitter-context',
+            -- 'nvim-treesitter/nvim-treesitter-context',
         },
         build = ':TSUpdate',
         config = function()
@@ -124,21 +124,21 @@ require('lazy').setup({
         end
     },
 
-    -- {
-    --   'ellisonleao/gruvbox.nvim',
-    --   priority = 1000,
-    --   config = function()
-    --     require("plugins.themes.gruvbox")
-    --   end
-    -- },
-
     {
-        "miikanissi/modus-themes.nvim",
-        priority = 1000,
-        config = function()
-            require("plugins.themes.modus")
-        end
+      'ellisonleao/gruvbox.nvim',
+      priority = 1000,
+      config = function()
+        require("plugins.themes.gruvbox")
+      end
     },
+
+    -- {
+    --     "miikanissi/modus-themes.nvim",
+    --     priority = 1000,
+    --     config = function()
+    --         require("plugins.themes.modus")
+    --     end
+    -- },
 
     -- {
     --     "dracula/vim",
