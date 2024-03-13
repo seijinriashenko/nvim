@@ -1,4 +1,4 @@
--- UI
+
 vim.o.nu = true
 vim.o.rnu = true
 
@@ -7,6 +7,9 @@ vim.o.colorcolumn = 80
 
 vim.o.background = "dark"
 vim.o.termguicolors = true
+
+-- Maximum number of pop-up menu (PUM) items
+vim.o.pumheight = 25
 
 -- UX
 vim.o.tabstop = 4

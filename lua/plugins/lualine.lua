@@ -7,21 +7,21 @@ end
 local custom_gruvbox = require("lualine.themes.gruvbox_dark")
 
 local colors = {
+  black        = '#1d2021',
   -- black        = '#0b0c0c',
-  -- black        = '#000000',
-  black        = '#07080c',
+  -- black        = '#07080c',
   white        = '#ebdbb2',
   red          = '#fb4934',
   green        = '#b8bb26',
   blue         = '#83a598',
   yellow       = '#fe8019',
   gray         = '#a89984',
-  -- darkgray     = '#171919',
-  -- lightgray    = '#171919',
-  -- inactivegray = '#171919',
-  darkgray     = '#0e1018',
-  lightgray    = '#0e1018',
-  inactivegray = '#0e1018',
+  darkgray     = '#171919',
+  lightgray    = '#171919',
+  inactivegray = '#171919',
+  -- darkgray     = '#0e1018',
+  -- lightgray    = '#0e1018',
+  -- inactivegray = '#0e1018',
 }
 
 custom_gruvbox =  {
@@ -60,7 +60,8 @@ custom_gruvbox =  {
 lualine.setup {
   options = {
     icons_enabled = false,
-    theme = custom_gruvbox,
+    -- theme = custom_gruvbox,
+    theme = "gruvbox",
     component_separators = '|',
     section_separators = '',
   },
