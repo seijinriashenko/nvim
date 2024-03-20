@@ -1,5 +1,4 @@
--- Order matters! (plugins -> any other settings)
-require "options"
-require "plugins"
-require "autocmd"
-require "mapping"
+require("options")
+require("lazy_init")
+require("keymaps")
+require("autocmd")

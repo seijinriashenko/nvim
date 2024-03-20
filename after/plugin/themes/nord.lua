@@ -1,7 +1,7 @@
 -- nord setup
 local status, nord = pcall(require, "nord")
 if not status then
-	print("nord is not installed")
+	-- print("nord is not installed")
 	return
 end
 

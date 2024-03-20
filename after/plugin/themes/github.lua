@@ -1,7 +1,7 @@
 -- gruvbox setup
 local status, github_theme = pcall(require, "github-theme")
 if not status then
-  print("github-theme is not installed")
+  -- print("github-theme is not installed")
   return
 end
 
@@ -10,8 +10,7 @@ github_theme.setup({
     -- Compiled file's destination location
     compile_path = vim.fn.stdpath('cache') .. '/github-theme',
     compile_file_suffix = '_compiled', -- Compiled file suffix
-    hide_end_of_buffer = true, -- Hide the '~' character at the end of the buffer for a cleaner look
-    hide_nc_statusline = true, -- Override the underline style for non-active statuslines
+    hide_end_of_buffer = true, -- Hide the '~' character at the end of the buffer for a cleaner look hide_nc_statusline = true, -- Override the underline style for non-active statuslines
     transparent = false,       -- Disable setting background
     terminal_colors = true,    -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
     dim_inactive = false,      -- Non focused panes set to alternative background

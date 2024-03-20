@@ -1,5 +1,3 @@
--- Global configuration of VimTex's settings
-
 -- Turn off VimTex indentation
 vim.g.vimtex_indent_enabled = 0
 

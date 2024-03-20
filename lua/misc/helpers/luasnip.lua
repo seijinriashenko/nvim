@@ -1,12 +1,12 @@
 -- Be sure to explicitly define these LuaSnip node abbreviations!
-local status, ls = pcall(require, "luasnip")
+local status, luasnip = pcall(require, "luasnip")
 if not status then
   print("LuaSnip is not installed")
   return
 end
 
-local sn = ls.snippet_node
-local i = ls.insert_node
+local sn = luasnip.snippet_node
+local i = luasnip.insert_node
 
 local M = {}
 

@@ -4,6 +4,11 @@ if not status then
 end
 
 conform.setup({
+	notify_on_error = false,
+	-- format_on_save = {
+	-- 	timeout_ms = 500,
+	-- 	lsp_fallback = true,
+	-- },
 	formatters = {
 		clang_format = {
 			prepend_args = {
