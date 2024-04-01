@@ -11,20 +11,21 @@ end
 
 local colors = {
 	-- black = "#1d2021",
-	-- black        = '#0b0c0c',
-	black = "#07080c",
+	-- black = '#0b0c0c',
+	-- black = "#07080c",
+	black = "#0e1018",
 	white = "#ebdbb2",
 	red = "#fb4934",
 	green = "#b8bb26",
 	blue = "#83a598",
 	yellow = "#fe8019",
-	gray = "#a89984",
+	gray = "#9999a8",
 	-- darkgray = "#171919",
 	-- lightgray = "#171919",
 	-- inactivegray = "#171919",
-	darkgray     = '#0e1018',
-	lightgray    = '#0e1018',
-	inactivegray = '#0e1018',
+	darkgray = "#131621",
+	lightgray = "#3b4466",
+	inactivegray = "#202538",
 }
 
 custom_gruvbox = {
@@ -64,8 +65,21 @@ lualine.setup({
 	options = {
 		icons_enabled = false,
 		-- theme = custom_gruvbox,
-		theme = "gruvbox_dark",
-		component_separators = "|",
-		section_separators = "",
+		theme = "gruvbox",
+		-- component_separators = "|",
+		-- section_separators = "",
+	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff", "diagnostics" },
+		lualine_c = {
+			"filename",
+			function()
+				return vim.fn["nvim_treesitter#statusline"](180)
+			end,
+		},
+		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
 	},
 })

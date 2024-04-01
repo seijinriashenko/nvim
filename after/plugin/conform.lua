@@ -13,7 +13,15 @@ conform.setup({
 		clang_format = {
 			prepend_args = {
 				"--style",
-				"{BasedOnStyle: llvm, IndentWidth: 4, PointerAlignment: Left, BreakBeforeBinaryOperators: true}",
+				"{ \
+				  BasedOnStyle: llvm, \
+				  IndentWidth: 4, \
+				  PointerAlignment: Left, \
+				  BreakBeforeBinaryOperators: true, \
+				  ColumnLimit: 100, \
+				  IncludeCategories: [{Regex: '^#', Priority: 0}] \
+				  AllowShortFunctionsOnASingleLine: Empty \
+				}",
 			},
 		},
 	},

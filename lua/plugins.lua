@@ -2,9 +2,9 @@ return {
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	"L3MON4D3/LuaSnip",
 	"stevearc/conform.nvim",
-	"mfussenegger/nvim-dap",
 	"lewis6991/gitsigns.nvim",
 	"nvim-treesitter/nvim-treesitter",
+	"farmergreg/vim-lastplace",
 	-- "lervag/vimtex",
 
 	{ "numToStr/Comment.nvim", opts = {} },
@@ -38,6 +38,14 @@ return {
 	},
 
 	{
+		"mfussenegger/nvim-dap",
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			"nvim-neotest/nvim-nio",
+		},
+	},
+
+	{
 		"nvim-telescope/telescope.nvim",
 		event = "VimEnter",
 		branch = "0.1.x",
@@ -65,14 +73,29 @@ return {
 	},
 
 	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		dependencies = 'nvim-tree/nvim-web-devicons'
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
 	},
+
+	-- {
+	-- 	"rebelot/kanagawa.nvim",
+	-- 	priority = 1000,
+	-- },
+
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+	},
+
+	-- {
+	-- 	"morhetz/gruvbox",
+	-- 	priority = 1000
+	-- }
 	-- { "rose-pine/neovim", name = "rose-pine", priority = 1000 }
 }
