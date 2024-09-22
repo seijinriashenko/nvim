@@ -97,7 +97,7 @@ if not status then
 end
 
 mason_lspconfig.setup({
-	ensure_installed = { "bashls", "clangd", "cssls", "html", "tsserver", "texlab", "lua_ls", "pyright" },
+	ensure_installed = { "bashls", "clangd", "cssls", "html", "ts_ls", "texlab", "lua_ls", "pyright" },
 	-- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
 	automatic_installation = false,
 	-- See `:h mason-lspconfig.setup_handlers()`

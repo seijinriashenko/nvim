@@ -1,3 +1,4 @@
+---@diagnostic disable: inject-field
 local status, modus_themes = pcall(require, "modus-themes")
 if not status then
     return
@@ -45,6 +46,9 @@ modus_themes.setup({
     ---@param highlights Highlights
     ---@param colors ColorScheme
     on_highlights = function(highlights, colors)
+        highlights.LineNr = { fg = "#ffffff", bg = "#000000" }
+        highlights.LineNrAbove = { fg = "#6e6e6e", bg = "#000000" }
+        highlights.LineNrBelow = { fg = "#6e6e6e", bg = "#000000" }
     end,
 })
 

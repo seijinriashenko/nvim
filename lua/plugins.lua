@@ -88,14 +88,23 @@ return {
 	-- 	priority = 1000,
 	-- },
 
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	priority = 1000,
+	-- },
+	--
+	-- {
+	-- 	"craftzdog/solarized-osaka.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- },
+
 	{
-		"ellisonleao/gruvbox.nvim",
+		"miikanissi/modus-themes.nvim",
 		priority = 1000,
+		opts = {},
 	},
 
-	-- {
-	-- 	"morhetz/gruvbox",
-	-- 	priority = 1000
-	-- }
 	-- { "rose-pine/neovim", name = "rose-pine", priority = 1000 }
 }

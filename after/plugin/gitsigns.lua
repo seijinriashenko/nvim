@@ -1,46 +1,60 @@
 local status, gitsigns = pcall(require, "gitsigns")
 if not status then
-	return
+    return
 end
 
 gitsigns.setup({
-	-- signs = {
-	-- 	add = { text = "│" },
-	-- 	change = { text = "│" },
-	-- 	delete = { text = "_" },
-	-- 	topdelete = { text = "‾" },
-	-- 	changedelete = { text = "~" },
-	-- 	untracked = { text = "┆" },
-	-- },
-	signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-	numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
-	linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
-	word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
-	watch_gitdir = {
-		follow_files = true,
-	},
-	attach_to_untracked = true,
-	current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
-	current_line_blame_opts = {
-		virt_text = true,
-		virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-		delay = 1000,
-		ignore_whitespace = false,
-	},
-	current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
-	sign_priority = 6,
-	update_debounce = 100,
-	status_formatter = nil, -- Use default
-	max_file_length = 40000, -- Disable if file is longer than this (in lines)
-	preview_config = {
-		-- Options passed to nvim_open_win
-		border = "single",
-		style = "minimal",
-		relative = "cursor",
-		row = 0,
-		col = 1,
-	},
-	yadm = {
-		enable = false,
-	},
+    signs = {
+        add = { text = "│" },
+        change = { text = "│" },
+        delete = { text = "_" },
+        topdelete = { text = "‾" },
+        changedelete = { text = "~" },
+        untracked = { text = "┆" },
+    },
+    signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+    numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
+    linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
+    word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+    watch_gitdir = {
+        follow_files = true,
+    },
+    attach_to_untracked = true,
+    current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+    current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align' delay = 1000,
+        ignore_whitespace = false,
+    },
+    current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
+    sign_priority = 6,
+    update_debounce = 100,
+    status_formatter = nil, -- Use default
+    max_file_length = 40000, -- Disable if file is longer than this (in lines)
+    preview_config = {
+        -- Options passed to nvim_open_win
+        border = "single",
+        style = "minimal",
+        relative = "cursor",
+        row = 0,
+        col = 1,
+    },
 })
+
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = "*",
+  callback = function()
+    vim.cmd [[
+      hi DiffAdd bg=#000000
+      hi DiffChange bg=#000000
+      hi DiffDelete bg=#000000
+      hi DiffText bg=#000000
+    ]]
+  end
+})
+
+vim.api.nvim_set_hl(0, "GitSignsAdd", { fg="#44df44", bg = "#000000" })
+vim.api.nvim_set_hl(0, "GitSignsChange", { fg="#82b0ec", bg = "#000000" })
+vim.api.nvim_set_hl(0, "GitSignsDelete", { fg="#ff5f59", bg = "#000000" })
+vim.api.nvim_set_hl(0, "GitSignsText", { fg="#ffffff", bg = "#000000" })
