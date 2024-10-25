@@ -55,7 +55,7 @@ return {
             "nvim-telescope/telescope-ui-select.nvim",
             { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
             { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
-            "folke/todo-comments.nvim"
+            "folke/todo-comments.nvim",
         },
         config = function()
             local telescope = require("telescope")
@@ -88,7 +88,7 @@ return {
             vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch Current [W]ord" })
             vim.keymap.set("n", "<leader>st", ":TodoTelescope<CR>", { desc = "[S]earch [T]ODOs" })
             vim.keymap.set("n", "<leader>s.", builtin.resume, { desc = "[S]earch Resume[.]" })
-        end
+        end,
     },
     {
         "nvim-tree/nvim-tree.lua",
@@ -128,7 +128,12 @@ return {
 
             -- Keymaps
             vim.keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-            vim.keymap.set("n", "<leader>ef", ":NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer for current file" })
+            vim.keymap.set(
+                "n",
+                "<leader>ef",
+                ":NvimTreeFindFileToggle<CR>",
+                { desc = "Toggle file explorer for current file" }
+            )
             vim.keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
             vim.keymap.set("n", "<leader>er", ":NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
         end,

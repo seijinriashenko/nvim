@@ -2,7 +2,7 @@
 -- Global options --
 --------------------
 --  NOTE: Must happen before plugins are loaded
---	  (otherwise wrong leader will be used)
+--    (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true -- true if a nerd font is installed
@@ -11,18 +11,79 @@ vim.g.have_nerd_font = true -- true if a nerd font is installed
 ----- Languages -----
 ---------------------
 local langmap_keys = {
-	-- Russian
-	'ёЁ;`~', '№;#',
-	'йЙ;qQ', 'цЦ;wW', 'уУ;eE', 'кК;rR', 'еЕ;tT', 'нН;yY', 'гГ;uU', 'шШ;iI', 'щЩ;oO', 'зЗ;pP', 'хХ;[{', 'ъЪ;]}',
-	'фФ;aA', 'ыЫ;sS', 'вВ;dD', 'аА;fF', 'пП;gG', 'рР;hH', 'оО;jJ', 'лЛ;kK', 'дД;lL', [[жЖ;\;:]], [[эЭ;'\"]],
-	'яЯ;zZ', 'чЧ;xX', 'сС;cC', 'мМ;vV', 'иИ;bB', 'тТ;nN', 'ьЬ;mM', [[бБ;\,<]], 'юЮ;.>',
-	-- Ukrainian
-	[[\ʼ;~]],    '№;#',
-	'йЙ;qQ',     'цЦ;wW', 'уУ;eE',  'кК;rR', 'еЕ;tT', 'нН;yY', 'гГ;uU', 'шШ;iI',    'щЩ;oO',    'зЗ;pP',    'хХ;[{', 'їЇ;]}', [[ґҐ;\\|]],
-	'фФ;aA',     'іІ;sS', 'вВ;dD',  'аА;fF', 'пП;gG', 'рР;hH', 'оО;jJ', 'лЛ;kK',    'дД;lL', [[жЖ;\;:]], [[єЄ;'\"]],
-	'яЯ;zZ',     'чЧ;xX', 'сС;cC',  'мМ;vV', 'иИ;bB', 'тТ;nN', 'ьЬ;mM', [[бБ;\,<]], 'юЮ;.>',
+    -- Russian
+    "ёЁ;`~",
+    "№;#",
+    "йЙ;qQ",
+    "цЦ;wW",
+    "уУ;eE",
+    "кК;rR",
+    "еЕ;tT",
+    "нН;yY",
+    "гГ;uU",
+    "шШ;iI",
+    "щЩ;oO",
+    "зЗ;pP",
+    "хХ;[{",
+    "ъЪ;]}",
+    "фФ;aA",
+    "ыЫ;sS",
+    "вВ;dD",
+    "аА;fF",
+    "пП;gG",
+    "рР;hH",
+    "оО;jJ",
+    "лЛ;kK",
+    "дД;lL",
+    [[жЖ;\;:]],
+    [[эЭ;'\"]],
+    "яЯ;zZ",
+    "чЧ;xX",
+    "сС;cC",
+    "мМ;vV",
+    "иИ;bB",
+    "тТ;nN",
+    "ьЬ;mM",
+    [[бБ;\,<]],
+    "юЮ;.>",
+    -- Ukrainian
+    [[\ʼ;~]],
+    "№;#",
+    "йЙ;qQ",
+    "цЦ;wW",
+    "уУ;eE",
+    "кК;rR",
+    "еЕ;tT",
+    "нН;yY",
+    "гГ;uU",
+    "шШ;iI",
+    "щЩ;oO",
+    "зЗ;pP",
+    "хХ;[{",
+    "їЇ;]}",
+    [[ґҐ;\\|]],
+    "фФ;aA",
+    "іІ;sS",
+    "вВ;dD",
+    "аА;fF",
+    "пП;gG",
+    "рР;hH",
+    "оО;jJ",
+    "лЛ;kK",
+    "дД;lL",
+    [[жЖ;\;:]],
+    [[єЄ;'\"]],
+    "яЯ;zZ",
+    "чЧ;xX",
+    "сС;cC",
+    "мМ;vV",
+    "иИ;bB",
+    "тТ;nN",
+    "ьЬ;mM",
+    [[бБ;\,<]],
+    "юЮ;.>",
 }
-vim.opt.langmap = table.concat(langmap_keys, ',')
+vim.opt.langmap = table.concat(langmap_keys, ",")
 
 --------------------
 ------- UI ---------

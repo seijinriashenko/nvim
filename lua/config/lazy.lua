@@ -22,11 +22,11 @@ require("lazy").setup({
         { import = "plugins.lsp" },
     },
     install = {
-        colorscheme = { "habamax" }
+        colorscheme = { "habamax" },
     },
     checker = { -- automatic plugins updates check
         enabled = true,
-        notify = false
+        notify = false,
     },
     change_detection = {
         notify = false,

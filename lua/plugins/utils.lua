@@ -3,7 +3,7 @@ return {
     {
         "folke/todo-comments.nvim",
         event = { "BufReadPre", "BufNewFile" },
-        dependencies = { "nvim-lua/plenary.nvim"},
+        dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             local todo_comments = require("todo-comments")
 
@@ -29,7 +29,7 @@ return {
                     info = { "DiagnosticInfo", "#2563EB" },
                     hint = { "DiagnosticHint", "#10B981" },
                     default = { "Identifier", "#7C3AED" },
-                    test = { "Identifier", "#FF00FF" }
+                    test = { "Identifier", "#FF00FF" },
                 },
                 search = {
                     pattern = [[\b(KEYWORDS):]], -- ripgrep regex
@@ -39,11 +39,11 @@ return {
 
             vim.keymap.set("n", "]t", function()
                 todo_comments.jump_next()
-            end, { desc = "Next [T]ODO comment "})
+            end, { desc = "Next [T]ODO comment " })
 
             vim.keymap.set("n", "[t", function()
                 todo_comments.jump_prev()
-            end, { desc = "Previous [T]ODO comment "})
+            end, { desc = "Previous [T]ODO comment " })
         end,
-    }
+    },
 }

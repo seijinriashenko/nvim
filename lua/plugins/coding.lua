@@ -59,13 +59,13 @@ return {
                 formatting = {
                     format = lspkind.cmp_format({
                         mode = "symbol_text",
-                        menu = ({
+                        menu = {
                             luasnip = "[LuaSnip]",
                             nvim_lsp = "[LSP]",
                             buffer = "[Buffer]",
                             path = "[Path]",
                             latex_symbols = "[LaTeX]",
-                        })
+                        },
                     }),
                 },
                 window = {
@@ -73,7 +73,7 @@ return {
                     -- documentation = cmp.config.window.bordered(),
                 },
             })
-        end
+        end,
     },
     {
         "windwp/nvim-autopairs",
@@ -102,7 +102,7 @@ return {
             })
 
             require("Comment").setup({
-              pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+                pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
             })
         end,
     },
