@@ -7,6 +7,5 @@ vim.opt_local.autoindent = true
 
 -- Remove auto-indentation in enumerated environments
 vim.g.tex_indent_items = 0
-
 -- Make concealing enabled
 -- vim.opt_local.conceallevel = 2

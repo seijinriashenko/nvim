@@ -18,7 +18,7 @@ return {
 
             cmp.setup({
                 completion = {
-                    completeopt = "menu,menuone,preview,noselect",
+                    completeopt = "menu,menuone,preview",
                 },
                 snippet = {
                     expand = function(args)
@@ -29,7 +29,7 @@ return {
                     ["<C-n>"] = cmp.mapping.select_next_item(),
                     ["<C-p>"] = cmp.mapping.select_prev_item(),
                     ["<C-k>"] = cmp.mapping.select_prev_item(),
-                    ["<C-j>"] = cmp.mapping.select_prev_item(),
+                    ["<C-j>"] = cmp.mapping.select_next_item(),
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
                     ["<C-y>"] = cmp.mapping.confirm({ select = true }),
@@ -78,6 +78,9 @@ return {
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
+        dependencies = {
+            "hrsh7th/nvim-cmp",
+        },
         config = function()
             local autopairs = require("nvim-autopairs")
             autopairs.setup({ check_ts = true })
@@ -86,9 +89,6 @@ return {
             local cmp = require("cmp")
             cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
         end,
-        dependencies = {
-            "hrsh7th/nvim-cmp",
-        },
     },
     {
         "numToStr/Comment.nvim",
